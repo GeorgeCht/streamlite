@@ -1,21 +1,19 @@
-/* eslint no-unused-vars: 0 */
-
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface InterceptorState {
-  urls: Array<string>
-  isOpen: boolean
-  pushUrl: (url: string) => void
-  setIsOpen: (newState: boolean) => void
+  urls: Array<string>;
+  isOpen: boolean;
+  pushUrl: (url: string) => void;
+  setIsOpen: (newState: boolean) => void;
 }
 
-export type InitialInterceptorState = Pick<InterceptorState, 'urls' | 'isOpen'>
+export type InitialInterceptorState = Pick<InterceptorState, "urls" | "isOpen">;
 
 export const initialState: InitialInterceptorState = {
-  urls: ['begin'],
+  urls: ["begin"],
   isOpen: false,
-}
+};
 
 const useInterceptorStore = create(
   persist<InterceptorState>(
@@ -33,9 +31,9 @@ const useInterceptorStore = create(
       setIsOpen: (newState: boolean) => set(() => ({ isOpen: newState })),
     }),
     {
-      name: 'interceptor',
-    },
-  ),
-)
+      name: "interceptor",
+    }
+  )
+);
 
-export default useInterceptorStore
+export default useInterceptorStore;

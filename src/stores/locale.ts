@@ -1,17 +1,16 @@
-import { create } from 'zustand'
-import { persist } from 'zustand/middleware'
+import { create } from "zustand";
+import { persist } from "zustand/middleware";
 
 interface LocaleState {
-  locale: string
-  // eslint-disable-next-line no-unused-vars
-  setLocale: (locale: string) => void
+  locale: string;
+  setLocale: (locale: string) => void;
 }
 
-export type InitialLocaleState = Pick<LocaleState, 'locale'>
+export type InitialLocaleState = Pick<LocaleState, "locale">;
 
 export const initialState: InitialLocaleState = {
-  locale: 'en',
-}
+  locale: "en",
+};
 
 const useLocaleStore = create(
   persist<LocaleState>(
@@ -20,9 +19,9 @@ const useLocaleStore = create(
       setLocale: (locale: string) => set({ locale }),
     }),
     {
-      name: 'locale',
-    },
-  ),
-)
+      name: "locale",
+    }
+  )
+);
 
-export default useLocaleStore
+export default useLocaleStore;
