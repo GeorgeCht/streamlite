@@ -1,18 +1,18 @@
-import React, { type DetailedHTMLProps, type HTMLAttributes } from "react";
 import {
-  Modal,
-  ModalContent,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Button,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
   useDisclosure,
-} from "@nextui-org/react";
-import { cn } from "@nextui-org/react";
-import { ScrollArea } from "@radix-ui/react-scroll-area";
-import { useFormatter, useTranslations } from "next-intl";
-import Ratings from "./ratings";
-import Seperator from "../modal/seperator";
+} from '@nextui-org/react'
+import { cn } from '@nextui-org/react'
+import { ScrollArea } from '@radix-ui/react-scroll-area'
+import { useFormatter, useTranslations } from 'next-intl'
+import React, { type DetailedHTMLProps, type HTMLAttributes } from 'react'
+import Seperator from '../modal/seperator'
+import Ratings from './ratings'
 
 const ReviewCard = ({
   review,
@@ -20,29 +20,29 @@ const ReviewCard = ({
   className,
   ...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLDivElement>, HTMLDivElement> & {
-  review: ReviewResult;
-  width?: string | number;
+  review: ReviewResult
+  width?: string | number
 }) => {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure();
-  const tActions = useTranslations("actions");
-  const format = useFormatter();
+  const { isOpen, onOpen, onOpenChange } = useDisclosure()
+  const tActions = useTranslations('actions')
+  const format = useFormatter()
 
   return (
     <React.Fragment>
       <div
         style={{ maxWidth: width }}
         onClick={onOpen}
-        aria-roledescription={"review"}
+        aria-roledescription={'review'}
         className={cn(
-          "flex flex-col gap-2 p-3 rounded-large bg-white/[.08] w-full cursor-pointer",
-          className
+          'flex flex-col gap-2 p-3 rounded-large bg-white/[.08] w-full cursor-pointer',
+          className,
         )}
         {...props}
       >
-        <Ratings size={"md"} rating={review.author_details.rating} />
+        <Ratings size={'md'} rating={review.author_details.rating} />
         <p
           className={
-            "text-xs font-semibold text-white/50 leading-none overflow-hidden truncate w-full line-clamp-1 pt-1"
+            'text-xs font-semibold text-white/50 leading-none overflow-hidden truncate w-full line-clamp-1 pt-1'
           }
         >
           {review.author}, {format.relativeTime(new Date(review.created_at))}
@@ -50,65 +50,65 @@ const ReviewCard = ({
         <div
           dangerouslySetInnerHTML={{ __html: review.content }}
           className={
-            "w-full text-sm font-normal text-balance text-white leading-[1.3em] min-h-[calc(4*1.3em)] truncate line-clamp-4"
+            'w-full text-sm font-normal text-balance text-white leading-[1.3em] min-h-[calc(4*1.3em)] truncate line-clamp-4'
           }
         />
       </div>
       <Modal
-        size={"sm"}
+        size={'sm'}
         isOpen={isOpen}
         onOpenChange={onOpenChange}
-        backdrop={"blur"}
+        backdrop={'blur'}
         classNames={{
-          base: "bg-[#0D0D0E]",
-          backdrop: "bg-black/80",
+          base: 'bg-[#0D0D0E]',
+          backdrop: 'bg-black/80',
           closeButton:
-            "hover:bg-white/15 active:bg-white/20 transition-all top-2 right-2 z-[99] p-3 child:w-5 child:h-5 child:hover:text-white child:md:text-white/75 child:text-white",
+            'hover:bg-white/15 active:bg-white/20 transition-all top-2 right-2 z-[99] p-3 child:w-5 child:h-5 child:hover:text-white child:md:text-white/75 child:text-white',
         }}
       >
-        <ModalContent className={"h-[40rem] !relative flex overflow-hidden"}>
+        <ModalContent className={'h-[40rem] !relative flex overflow-hidden'}>
           {(onClose) => (
             <React.Fragment>
-              <ModalHeader className={"flex flex-col w-full"}>
-                <Ratings size={"md"} rating={review.author_details.rating} />
+              <ModalHeader className={'flex flex-col w-full'}>
+                <Ratings size={'md'} rating={review.author_details.rating} />
                 <p
                   className={
-                    "text-sm font-medium text-white/50 leading-none pt-2 cursor-default"
+                    'text-sm font-medium text-white/50 leading-none pt-2 cursor-default'
                   }
                 >
-                  {review.author},{" "}
+                  {review.author},{' '}
                   {format.relativeTime(new Date(review.created_at))}
                 </p>
               </ModalHeader>
-              <Seperator className={"border-white/10"} />
+              <Seperator className={'border-white/10'} />
               <ScrollArea
                 className={
-                  "relative h-[40rem] lg:w-[384px] w-full rounded-large p-[1px] z-10 child:absolute child:top-0 child:right-0 child:bottom-0 child:left-0"
+                  'relative h-[40rem] lg:w-[384px] w-full rounded-large p-[1px] z-10 child:absolute child:top-0 child:right-0 child:bottom-0 child:left-0'
                 }
               >
                 <ModalBody
                   className={
-                    "w-full h-[40rem] overflow-y-scroll disable-scrollbar"
+                    'w-full h-[40rem] overflow-y-scroll disable-scrollbar'
                   }
                 >
                   <div
                     className={
-                      "w-full text-base font-normal text-balance text-white pt-2 pb-[9rem]"
+                      'w-full text-base font-normal text-balance text-white pt-2 pb-[9rem]'
                     }
                     dangerouslySetInnerHTML={{ __html: review.content }}
                   />
                 </ModalBody>
               </ScrollArea>
-              <Seperator className={"border-white/10"} />
+              <Seperator className={'border-white/10'} />
               <ModalFooter
-                className={"bg-[#0D0D0E] z-20 px-2 py-3 border-white/10"}
+                className={'bg-[#0D0D0E] z-20 px-2 py-3 border-white/10'}
               >
                 <Button
-                  className={"w-full !bg-transparent !border-transparent"}
-                  variant={"ghost"}
+                  className={'w-full !bg-transparent !border-transparent'}
+                  variant={'ghost'}
                   onPress={onClose}
                 >
-                  {tActions("dismiss")}
+                  {tActions('dismiss')}
                 </Button>
               </ModalFooter>
             </React.Fragment>
@@ -116,7 +116,7 @@ const ReviewCard = ({
         </ModalContent>
       </Modal>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default ReviewCard;
+export default ReviewCard

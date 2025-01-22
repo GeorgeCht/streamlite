@@ -6,8 +6,8 @@ import MovieCarousel from '@/components/ui/movie-carousel'
 import Title from '@/components/ui/title'
 import React from 'react'
 
-import { useTranslations } from 'next-intl'
 import { formatLocale } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 const Page = ({ params }: { params: { id: string; locale: string } }) => {
   const tTitle = useTranslations('titles')

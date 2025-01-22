@@ -67,7 +67,7 @@
     @apply overflow-hidden;
   }
   .backdrop-blur-fix::before {
-    content: '';
+    content: "";
     position: absolute;
     width: 100%;
     height: 100%;

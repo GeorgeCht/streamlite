@@ -1,22 +1,22 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { create } from 'zustand'
+import { persist } from 'zustand/middleware'
 
 interface TvSeriesTrackerState {
-  id: string;
-  data: TvDetailsWithImageAndVideos | undefined;
-  setId: (id: string) => void;
-  setData: (data: TvDetailsWithImageAndVideos) => void;
+  id: string
+  data: TvDetailsWithImageAndVideos | undefined
+  setId: (id: string) => void
+  setData: (data: TvDetailsWithImageAndVideos) => void
 }
 
 export type InitialTvSeriesTrackerState = Pick<
   TvSeriesTrackerState,
-  "id" | "data"
->;
+  'id' | 'data'
+>
 
 export const initialState: InitialTvSeriesTrackerState = {
-  id: "",
+  id: '',
   data: undefined,
-};
+}
 
 const useTvSeriesTrackerStore = create(
   persist<TvSeriesTrackerState>(
@@ -26,9 +26,9 @@ const useTvSeriesTrackerStore = create(
       setData: (data: TvDetailsWithImageAndVideos) => set(() => ({ data })),
     }),
     {
-      name: "tvSeriesTracker",
-    }
-  )
-);
+      name: 'tvSeriesTracker',
+    },
+  ),
+)
 
-export default useTvSeriesTrackerStore;
+export default useTvSeriesTrackerStore

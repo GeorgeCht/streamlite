@@ -1,7 +1,7 @@
 'use client'
 
-import React from 'react'
 import MoviesPage from '@/components/pages/movies'
+import React from 'react'
 
 export default function Page() {
   return (

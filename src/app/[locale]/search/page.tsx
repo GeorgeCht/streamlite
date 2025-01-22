@@ -2,16 +2,16 @@
 
 import Footer from '@/components/layout/footer'
 import MovieCarousel from '@/components/ui/movie-carousel'
-import TvCarousel from '@/components/ui/tv-carousel'
 import Title from '@/components/ui/title'
+import TvCarousel from '@/components/ui/tv-carousel'
 import useBGManager from '@/stores/bg-manager'
 import React, { useEffect } from 'react'
 
-import { useTranslations } from 'next-intl'
 import { fetchData } from '@/lib/utils'
-import { useSearchParams } from 'next/navigation'
-import { useQuery } from '@tanstack/react-query'
 import { Skeleton } from '@nextui-org/react'
+import { useQuery } from '@tanstack/react-query'
+import { useTranslations } from 'next-intl'
+import { useSearchParams } from 'next/navigation'
 
 const Page = () => {
   const tMessage = useTranslations('messages')

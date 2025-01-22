@@ -1,9 +1,9 @@
-import type React from "react";
+import type React from 'react'
 
-import { Modal, ModalContent } from "@nextui-org/react";
-import { useState } from "react";
+import { Modal, ModalContent } from '@nextui-org/react'
+import { useState } from 'react'
 
-import EpisodeContent from "./episode-content";
+import EpisodeContent from './episode-content'
 
 const EpisodePicker = ({
   id,
@@ -12,31 +12,31 @@ const EpisodePicker = ({
   onOpenChange,
   setIsOpen,
 }: {
-  id: string;
-  detailsData: TvDetailsWithImageAndVideos;
-  isOpen: boolean;
-  onOpen: () => void;
+  id: string
+  detailsData: TvDetailsWithImageAndVideos
+  isOpen: boolean
+  onOpen: () => void
   // eslint-disable-next-line no-unused-vars
-  onOpenChange?: ((isOpen: boolean) => void) | undefined;
+  onOpenChange?: ((isOpen: boolean) => void) | undefined
   // eslint-disable-next-line no-unused-vars
-  setIsOpen?: (value: React.SetStateAction<boolean>) => void;
+  setIsOpen?: (value: React.SetStateAction<boolean>) => void
 }) => {
-  const [season, setSeason] = useState(1);
+  const [season, setSeason] = useState(1)
 
   return (
     <Modal
-      size={"xl"}
+      size={'xl'}
       isOpen={isOpen}
       onOpenChange={onOpenChange}
-      backdrop={"blur"}
+      backdrop={'blur'}
       classNames={{
-        base: "bg-[#0D0D0E]",
-        backdrop: "bg-black/80",
+        base: 'bg-[#0D0D0E]',
+        backdrop: 'bg-black/80',
         closeButton:
-          "hover:bg-white/15 active:bg-white/20 transition-all top-2 right-2 z-[99] p-3 child:w-5 child:h-5 child:hover:text-white child:md:text-white/75 child:text-white",
+          'hover:bg-white/15 active:bg-white/20 transition-all top-2 right-2 z-[99] p-3 child:w-5 child:h-5 child:hover:text-white child:md:text-white/75 child:text-white',
       }}
     >
-      <ModalContent className={"h-[75vh] !relative flex overflow-hidden"}>
+      <ModalContent className={'h-[75vh] !relative flex overflow-hidden'}>
         <EpisodeContent
           id={id}
           season={season}
@@ -46,7 +46,7 @@ const EpisodePicker = ({
         />
       </ModalContent>
     </Modal>
-  );
-};
+  )
+}
 
-export default EpisodePicker;
+export default EpisodePicker

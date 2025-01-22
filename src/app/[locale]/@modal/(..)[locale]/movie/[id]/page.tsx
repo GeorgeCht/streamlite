@@ -1,28 +1,28 @@
 'use client'
 
-import React, { useState } from 'react'
+import { useRouter } from '@/components/i18n/navigation'
+import { ScrollArea } from '@/components/ui/scroll-area'
+import { useScreenSize } from '@/lib/hooks'
+import { findLastCanonUrl } from '@/lib/utils'
 import {
   Modal,
-  ModalContent,
   ModalBody,
+  ModalContent,
   ModalFooter,
   cn,
 } from '@nextui-org/react'
-import { findLastCanonUrl } from '@/lib/utils'
-import { useScreenSize } from '@/lib/hooks'
-import { useRouter } from '@/components/i18n/navigation'
-import { ScrollArea } from '@/components/ui/scroll-area'
 import { useIdle } from '@uidotdev/usehooks'
 import { useTranslations } from 'next-intl'
+import React, { useState } from 'react'
 
-import useInterceptorStore from '@/stores/interceptor'
-import MovieCarousel from '@/components/ui/movie-carousel'
-import Seperator from '@/components/modal/seperator'
+import Footer from '@/components/layout/footer'
 import Header from '@/components/modal/header'
+import Seperator from '@/components/modal/seperator'
 import Information from '@/components/ui/information'
+import MovieCarousel from '@/components/ui/movie-carousel'
 import Reviews from '@/components/ui/reviews'
 import Title from '@/components/ui/title'
-import Footer from '@/components/layout/footer'
+import useInterceptorStore from '@/stores/interceptor'
 
 const Page = ({ params }: { params: { id: string; locale: string } }) => {
   const router = useRouter()
