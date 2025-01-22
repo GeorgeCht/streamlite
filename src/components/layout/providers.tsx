@@ -1,11 +1,12 @@
-'use client'
+"use client";
 
-import * as React from 'react'
-import { NextUIProvider } from '@nextui-org/system'
-import { QueryClient } from '@tanstack/react-query'
-import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
-import { createSyncStoragePersister } from '@tanstack/query-sync-storage-persister'
-import { NavigationEvents } from '@/components/misc/navigation-events'
+import * as React from "react";
+
+import { NextUIProvider } from "@nextui-org/system";
+import { QueryClient } from "@tanstack/react-query";
+import { PersistQueryClientProvider } from "@tanstack/react-query-persist-client";
+import { createSyncStoragePersister } from "@tanstack/query-sync-storage-persister";
+import { NavigationEvents } from "@/components/misc/navigation-events";
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -16,11 +17,11 @@ const queryClient = new QueryClient({
       gcTime: 1000 * 60 * 60 * 24, // 24 hours
     },
   },
-})
+});
 
 const localStoragePersister = createSyncStoragePersister({
-  storage: typeof window !== 'undefined' ? window.localStorage : undefined,
-})
+  storage: typeof window !== "undefined" ? window.localStorage : undefined,
+});
 
 const Providers = ({ children }: React.PropsWithChildren) => {
   return (
@@ -35,7 +36,7 @@ const Providers = ({ children }: React.PropsWithChildren) => {
         <NavigationEvents />
       </React.Suspense>
     </PersistQueryClientProvider>
-  )
-}
+  );
+};
 
-export default Providers
+export default Providers;

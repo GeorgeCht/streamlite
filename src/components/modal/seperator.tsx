@@ -1,11 +1,11 @@
-import { cn } from '@nextui-org/react'
-import { DetailedHTMLProps, HTMLAttributes } from 'react'
+import { cn } from "@nextui-org/react";
+import type { DetailedHTMLProps, HTMLAttributes } from "react";
 
 const Seperator = ({
   className,
   ...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLHRElement>, HTMLHRElement>) => {
-  return <hr className={cn('border-white/10', className)} {...props} />
-}
+  return <hr className={cn("border-white/10", className)} {...props} />;
+};
 
-export default Seperator
+export default Seperator;
