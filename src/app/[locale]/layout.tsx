@@ -1,9 +1,10 @@
 import { cn } from '@nextui-org/react'
-import type { Metadata, Viewport } from 'next'
 import { NextIntlClientProvider, useMessages } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 import { Inter } from 'next/font/google'
 import { Suspense } from 'react'
+
+import type { Metadata, Viewport } from 'next'
 
 import MainWrapper from '@/components/layout/main-wrapper'
 import MobileNavigation from '@/components/layout/mobile-navigation'
@@ -12,9 +13,9 @@ import ProgressiveBackground from '@/components/layout/progressive-bg'
 import Providers from '@/components/layout/providers'
 import NoSsr from '@/components/misc/no-ssr'
 import SearchBar from '@/components/search/searchbar'
+import LoadingSpinner from '@/components/misc/spinner'
 
 import '../globals.css'
-import LoadingSpinner from '@/components/misc/spinner'
 
 const inter = Inter({ subsets: ['latin'] })
 
