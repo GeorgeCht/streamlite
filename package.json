@@ -1,6 +1,6 @@
 {
   "name": "streamlite",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "author": "GeorgeCht <info@georgecht.com>",
   "private": true,
   "scripts": {
@@ -10,9 +10,9 @@
     "check": "bunx @biomejs/biome check --write --unsafe .",
     "commit": "git add . && cz",
     "release": "commit-and-tag-version",
-    "release:major": "bun run release -- --release-as major",
-    "release:minor": "bun run release -- --release-as minor",
-    "release:patch": "bun run release -- --release-as patch"
+    "release:major": "commit-and-tag-version -- --release-as major",
+    "release:minor": "commit-and-tag-version -- --release-as minor",
+    "release:patch": "commit-and-tag-version -- --release-as patch"
   },
   "engines": {
     "node": ">=18"
