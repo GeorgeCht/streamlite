@@ -1,12 +1,12 @@
+import Footer from '@/components/layout/footer'
 import PageWrapper from '@/components/layout/page-wrapper'
 import MovieCarousel from '@/components/ui/movie-carousel'
-import TvCarousel from '@/components/ui/tv-carousel'
-import Footer from '@/components/layout/footer'
 import Title from '@/components/ui/title'
+import TvCarousel from '@/components/ui/tv-carousel'
 import React from 'react'
 
-import { unstable_setRequestLocale } from 'next-intl/server'
 import { useTranslations } from 'next-intl'
+import { unstable_setRequestLocale } from 'next-intl/server'
 
 export default function Page({ params }: { params: { locale: string } }) {
   unstable_setRequestLocale(params.locale)

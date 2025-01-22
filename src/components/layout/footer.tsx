@@ -1,45 +1,45 @@
-import Link from "next/link";
+import Link from 'next/link'
 
-import { cn } from "@nextui-org/react";
-import { useTranslations } from "next-intl";
+import { cn } from '@nextui-org/react'
+import { useTranslations } from 'next-intl'
 
-import type { DetailedHTMLProps, HTMLAttributes } from "react";
+import type { DetailedHTMLProps, HTMLAttributes } from 'react'
 
 const Footer = ({
   className,
   ...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>) => {
-  const t = useTranslations("footer");
+  const t = useTranslations('footer')
   return (
     <footer
       className={cn(
-        "flex sm:flex-row flex-col gap-1.5 sm:gap-0 items-center justify-between relative w-full pt-10 pb-1 border-t border-t-white/15",
-        className
+        'flex sm:flex-row flex-col gap-1.5 sm:gap-0 items-center justify-between relative w-full pt-10 pb-1 border-t border-t-white/15',
+        className,
       )}
       {...props}
     >
       <div>
-        <p className={"text-sm sm:text-[15px] cursor-default"}>
+        <p className={'text-sm sm:text-[15px] cursor-default'}>
           ©{new Date().getFullYear()} WMovies. By GeorgeCht.
         </p>
       </div>
-      <ul className={"flex sm:gap-6 gap-4"}>
-        <li className={"text-sm sm:text-[15px]"}>
+      <ul className={'flex sm:gap-6 gap-4'}>
+        <li className={'text-sm sm:text-[15px]'}>
           <Link
-            href={"https://github.com/georgecht/wmovies/issues"}
-            target={"_blank"}
+            href={'https://github.com/georgecht/wmovies/issues'}
+            target={'_blank'}
           >
-            {t("feedback")}
+            {t('feedback')}
           </Link>
         </li>
-        <li className={"text-sm sm:text-[15px]"}>
-          <Link href={"/"} target={"_blank"}>
-            {t("disclaimer")}
+        <li className={'text-sm sm:text-[15px]'}>
+          <Link href={'/'} target={'_blank'}>
+            {t('disclaimer')}
           </Link>
         </li>
       </ul>
     </footer>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

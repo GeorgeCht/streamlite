@@ -1,42 +1,42 @@
-"use client";
+'use client'
 
-import React from "react";
-import NoSsr from "@/components/misc/no-ssr";
-import useInterceptorStore from "@/stores/interceptor";
+import NoSsr from '@/components/misc/no-ssr'
+import useInterceptorStore from '@/stores/interceptor'
+import React from 'react'
 
-import { Modal } from "@nextui-org/react";
-import { useRouter } from "@/components/i18n/navigation";
-import { findLastCanonUrl } from "@/lib/utils";
+import { useRouter } from '@/components/i18n/navigation'
+import { findLastCanonUrl } from '@/lib/utils'
+import { Modal } from '@nextui-org/react'
 
 const InterceptorModal = ({
   children: modal,
 }: {
-  children: React.ReactNode;
+  children: React.ReactNode
 }) => {
-  const router = useRouter();
-  const { isOpen, setIsOpen, urls } = useInterceptorStore();
+  const router = useRouter()
+  const { isOpen, setIsOpen, urls } = useInterceptorStore()
 
   return (
     <React.Fragment>
       <Modal
-        key={"modal"}
+        key={'modal'}
         isOpen={isOpen}
         onOpenChange={() => {
           if (isOpen) {
-            setIsOpen(false);
+            setIsOpen(false)
           }
           findLastCanonUrl(urls) !== undefined
             ? router.push(findLastCanonUrl(urls)!)
-            : router.back();
+            : router.back()
         }}
-        placement={"bottom"}
-        backdrop={"blur"}
-        size={"5xl"}
+        placement={'bottom'}
+        backdrop={'blur'}
+        size={'5xl'}
         classNames={{
-          base: "bg-[#0D0D0E] sm:!h-[95vh] !h-[90vh] !my-0 !sm:my-0",
-          backdrop: "bg-black/80",
+          base: 'bg-[#0D0D0E] sm:!h-[95vh] !h-[90vh] !my-0 !sm:my-0',
+          backdrop: 'bg-black/80',
           closeButton:
-            "hover:bg-white/15 active:bg-white/20 transition-all top-2 right-2 z-[99] p-3 child:w-5 child:h-5 child:hover:text-white child:md:text-white/75 child:text-white",
+            'hover:bg-white/15 active:bg-white/20 transition-all top-2 right-2 z-[99] p-3 child:w-5 child:h-5 child:hover:text-white child:md:text-white/75 child:text-white',
         }}
         motionProps={{
           variants: {
@@ -45,7 +45,7 @@ const InterceptorModal = ({
               opacity: 1,
               transition: {
                 duration: 0.3,
-                ease: "easeInOut",
+                ease: 'easeInOut',
               },
             },
             exit: {
@@ -53,7 +53,7 @@ const InterceptorModal = ({
               opacity: 0,
               transition: {
                 duration: 0.2,
-                ease: "easeInOut",
+                ease: 'easeInOut',
               },
             },
           },
@@ -62,10 +62,10 @@ const InterceptorModal = ({
         <NoSsr>{modal}</NoSsr>
       </Modal>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default InterceptorModal;
+export default InterceptorModal
 
 /* 
 

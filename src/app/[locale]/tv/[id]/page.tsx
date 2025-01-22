@@ -4,8 +4,8 @@ import Title from '@/components/ui/title'
 import TvCarousel from '@/components/ui/tv-carousel'
 import React from 'react'
 
-import { useTranslations } from 'next-intl'
 import { formatLocale } from '@/lib/utils'
+import { useTranslations } from 'next-intl'
 
 const Page = ({ params }: { params: { id: string; locale: string } }) => {
   const tTitle = useTranslations('titles')

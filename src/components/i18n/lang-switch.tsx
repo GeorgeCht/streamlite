@@ -1,22 +1,22 @@
 'use client'
 
-import React from 'react'
 import {
-  Dropdown,
-  DropdownTrigger,
-  DropdownMenu,
-  DropdownItem,
-  Button,
-  Avatar,
-} from '@nextui-org/react'
-import {
-  useRouter,
-  usePathname,
   localeNames,
   locales,
+  usePathname,
+  useRouter,
 } from '@/components/i18n/navigation'
-import { useLocale } from 'next-intl'
+import {
+  Avatar,
+  Button,
+  Dropdown,
+  DropdownItem,
+  DropdownMenu,
+  DropdownTrigger,
+} from '@nextui-org/react'
 import { ChevronDown } from 'lucide-react'
+import { useLocale } from 'next-intl'
+import React from 'react'
 
 const LangSwitch = ({ extended }: { extended?: boolean }) => {
   const locale = useLocale()
