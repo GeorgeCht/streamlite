@@ -1,0 +1,84 @@
+{
+  "$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+  "organizeImports": {
+    "enabled": true
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "a11y": {
+        "noSvgWithoutTitle": "off",
+        "useKeyWithClickEvents": "off"
+      },
+      "correctness": {
+        "noUnusedVariables": "warn",
+        "useExhaustiveDependencies": "off"
+      },
+      "complexity": {
+        "useArrowFunction": "off",
+        "noForEach": "off",
+        "noUselessFragments": "off",
+        "useLiteralKeys": "off"
+      },
+      "nursery": {
+        "useSortedClasses": {
+          "level": "off",
+          "options": {
+            "attributes": ["classList"],
+            "functions": ["clsx", "cva", "tw", "cn"]
+          }
+        }
+      },
+      "suspicious": {
+        "noExplicitAny": "off",
+        "noArrayIndexKey": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
+      },
+      "style": {
+        "noNonNullAssertion": "off",
+        "useImportType": "warn",
+        "useExportType": "warn",
+        "useDefaultParameterLast": "off",
+        "noParameterAssign": "off"
+      }
+    }
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "lineWidth": 80,
+    "ignore": [
+      "node_modules",
+      ".next",
+      "dist",
+      ".wrangler",
+      ".react-email",
+      ".contentlayer",
+      "meta"
+    ]
+  },
+  "files": {
+    "ignore": [
+      "**/dist/**/*",
+      "**/node_modules/**/*",
+      "**/public/**/*",
+      "**/playwright-report/**/*",
+      "**/sw.{js,ts}",
+      "**/.wrangler/**/*",
+      "**/.turbo/**/*",
+      "**/.next/**/*",
+      "**/.nextcomrc",
+      "**/*.test.{js,ts,jsx,tsx}",
+      "**/*.d.ts"
+    ]
+  },
+  "javascript": {
+    "formatter": {
+      "semicolons": "asNeeded",
+      "quoteStyle": "single"
+    }
+  }
+}

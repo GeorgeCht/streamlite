@@ -1,14 +1,22 @@
 {
-  "name": "wmovies",
+  "name": "streamlite",
   "version": "0.1.0",
-  "author": "GeorgeCht",
+  "author": "GeorgeCht <info@georgecht.com>",
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm i && next build",
+    "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "commit": "git add . && cz",
+    "release": "commit-and-tag-version",
+    "release:major": "bun run release -- --release-as major",
+    "release:minor": "bun run release -- --release-as minor",
+    "release:patch": "bun run release -- --release-as patch"
   },
+  "engines": {
+    "node": ">=18"
+  },
+  "packageManager": "bun@1.22.22",
   "dependencies": {
     "@nextui-org/react": "^2.2.10",
     "@radix-ui/react-aspect-ratio": "^1.0.3",
@@ -34,18 +42,84 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@commitlint/cz-commitlint": "^19.2.0",
     "@tanstack/eslint-plugin-query": "^5.28.11",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.1",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-import-resolver-alias": "^1.1.2",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-prettier": "^5.1.3",
+    "cz-conventional-changelog": "^3.3.0",
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "5.5.4"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog",
+      "types": {
+        "feat": {
+          "description": "A new feature",
+          "title": "Features",
+          "emoji": "✨"
+        },
+        "fix": {
+          "description": "A bug fix",
+          "title": "Bug Fixes",
+          "emoji": "🐛"
+        },
+        "docs": {
+          "description": "Documentation only changes",
+          "title": "Documentation",
+          "emoji": "📚"
+        },
+        "style": {
+          "description": "Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)",
+          "title": "Styles",
+          "emoji": "💎"
+        },
+        "refactor": {
+          "description": "A code change that neither fixes a bug nor adds a feature",
+          "title": "Code Refactoring",
+          "emoji": "📦"
+        },
+        "perf": {
+          "description": "A code change that improves performance",
+          "title": "Performance Improvements",
+          "emoji": "🚀"
+        },
+        "test": {
+          "description": "Adding missing tests or correcting existing tests",
+          "title": "Tests",
+          "emoji": "🚨"
+        },
+        "build": {
+          "description": "Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)",
+          "title": "Builds",
+          "emoji": "🛠"
+        },
+        "ci": {
+          "description": "Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)",
+          "title": "Continuous Integrations",
+          "emoji": "⚙️"
+        },
+        "chore": {
+          "description": "Other changes that don't modify src or test files",
+          "title": "Chores",
+          "emoji": "♻️"
+        },
+        "revert": {
+          "description": "Reverts a previous commit",
+          "title": "Reverts",
+          "emoji": "🗑"
+        },
+        "misc": {
+          "description": "Misc changes and/or updates.",
+          "title": "Misc",
+          "emoji": "👉"
+        }
+      }
+    }
   }
 }
