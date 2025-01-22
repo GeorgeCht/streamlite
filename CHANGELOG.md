@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.2](https://github.com/GeorgeCht/streamlite/compare/v0.1.1...v0.1.2) (2025-01-22)
+
+
+### 🐛 Bug Fixes
+
+* **env:** fixed mistake in .gitignore for .env; added .env.example ([c282787](https://github.com/GeorgeCht/streamlite/commit/c2827872237b4002f770c54efa3fda2002870931))
+
+
+### ♻️ Code Refactoring
+
+* **misc:** finished refactoring for biome rules ([a900a21](https://github.com/GeorgeCht/streamlite/commit/a900a21041f3a50ba114de0970b1b1e8fe63133a))
+
 ## 0.1.1 (2025-01-22)
 
 
