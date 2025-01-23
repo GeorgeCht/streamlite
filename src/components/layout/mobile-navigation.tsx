@@ -72,7 +72,7 @@ const MobileNavigation = ({
           >
             <div className={'flex flex-col gap-5 p-7'}>
               <div>
-                <WLogo />
+                {/* <WLogo /> */}
                 <ul className={'flex flex-col gap-2.5 pt-10'}>
                   <li
                     className={
