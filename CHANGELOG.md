@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.5](https://github.com/GeorgeCht/streamlite/compare/v0.1.4...v0.1.5) (2025-01-23)
+
+
+### ✨ Features
+
+* **idle:** implememnted better idle timing in multiple pages and components ([a0612a8](https://github.com/GeorgeCht/streamlite/commit/a0612a83afd7e6d2bedd42bdc7cccbd27c53a72b))
+* **loading-bar:** added loading bar for page load indications ([ef26436](https://github.com/GeorgeCht/streamlite/commit/ef26436e8a73f1e6902ea20f5f98b09deace9774))
+
 ## [0.1.4](https://github.com/GeorgeCht/streamlite/compare/v0.1.3...v0.1.4) (2025-01-23)
 
 
