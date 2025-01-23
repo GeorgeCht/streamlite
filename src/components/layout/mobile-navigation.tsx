@@ -119,7 +119,7 @@ const MobileNavigation = ({
                 <div className={'mt-10'}>
                   <span className={'inline-block'}>
                     <Link
-                      href={'https://github.com/georgecht/wmovies'}
+                      href={'https://github.com/georgecht/streamlite'}
                       target={'_blank'}
                       className={'group relative inline-block'}
                     >
@@ -135,12 +135,12 @@ const MobileNavigation = ({
                 </div>
                 <div className={'flex flex-col gap-0.5'}>
                   <p className={'text-sm sm:text-[15px] cursor-default'}>
-                    ©{new Date().getFullYear()} WMovies. By GeorgeCht.
+                    ©{new Date().getFullYear()} Streamlite. By GeorgeCht.
                   </p>
                   <ul className={'flex gap-2.5 child:text-white/50'}>
                     <li className={'text-sm sm:text-[15px]'}>
                       <Link
-                        href={'https://github.com/georgecht/wmovies/issues'}
+                        href={'https://github.com/georgecht/streamlite/issues'}
                         target={'_blank'}
                       >
                         {t('feedback')}

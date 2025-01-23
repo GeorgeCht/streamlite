@@ -7,6 +7,13 @@ import React from 'react'
 import { useTranslations } from 'next-intl'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Streamlite | TV Series',
+  description: 'Stream your favorite TV series online',
+}
+
 export default function Page({ params }: { params: { locale: string } }) {
   unstable_setRequestLocale(params.locale)
   const tTitle = useTranslations('titles')
