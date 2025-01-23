@@ -1,6 +1,20 @@
+import React from 'react'
+
 import WatchWrapper from '@/components/layout/watch-wrapper'
 import MediaPlayer from '@/components/ui/media-player'
-import React from 'react'
+
+export async function generateMetadata({
+  params: { id },
+}: { params: { id: string } }) {
+  const data: Response<TvResult> = await fetch(
+    `https://api.themoviedb.org/3/tv/${id}?api_key=${process.env
+      .NEXT_PUBLIC_TMDB_API_KEY!}`,
+  )
+  const tv: TvResult = await data.json()
+  return {
+    title: `${tv.name} | Streamlite`,
+  }
+}
 
 const Page = ({
   params,

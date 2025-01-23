@@ -2,6 +2,25 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.4](https://github.com/GeorgeCht/streamlite/compare/v0.1.3...v0.1.4) (2025-01-23)
+
+
+### ✨ Features
+
+* **brand:** updated brand image in nav menu ([ec32d80](https://github.com/GeorgeCht/streamlite/commit/ec32d80717be8c7bc687291f91cc5e241c1e5b00))
+* **favicon:** updated favicon ([5591f1b](https://github.com/GeorgeCht/streamlite/commit/5591f1bed2688e490fc406f59e413e40fcbda76e))
+
+
+### 🐛 Bug Fixes
+
+* **errors:** small fix ([fcf9a73](https://github.com/GeorgeCht/streamlite/commit/fcf9a733278b3780fa97d41107c63a950b084832))
+* **metadata:** updated metadata for inner pages; updated app title in various places ([4eb55cb](https://github.com/GeorgeCht/streamlite/commit/4eb55cb09ffbceeedd0ce712437bb918739b5a7a))
+
+
+### 👉 Misc
+
+* **layout:** metadata update ([ef8a912](https://github.com/GeorgeCht/streamlite/commit/ef8a91251f417b05e81e8eb29e52d474373e734c))
+
 ## [0.1.3](https://github.com/GeorgeCht/streamlite/compare/v0.1.2...v0.1.3) (2025-01-22)
 
 

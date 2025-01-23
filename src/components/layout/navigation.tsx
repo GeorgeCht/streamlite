@@ -452,7 +452,7 @@ const Navigation = ({
               )}
             </AnimatePresence>
             <NavigationItem
-              href={'https://github.com/georgecht/wmovies'}
+              href={'https://github.com/georgecht/streamlite'}
               target={'_blank'}
               content={'github'}
               width={22}
