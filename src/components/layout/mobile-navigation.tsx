@@ -15,25 +15,6 @@ import { useTranslations } from 'next-intl'
 
 import LangSwitch from '@/components/i18n/lang-switch'
 
-const WLogo = () => {
-  return (
-    <svg
-      width={'68'}
-      height={'78'}
-      viewBox={'0 0 68 78'}
-      fill={'none'}
-      xmlns={'http://www.w3.org/2000/svg'}
-    >
-      <path
-        d={
-          'M9.075 78L0 0H13.6125L20.625 53.7287L25.9875 0H40.6312L46.8187 53.7287L53.4188 0H67.5L57.1312 78L36.0369 76.6735L33.6187 40.6596L28.875 76.6735L9.075 78Z'
-        }
-        fill={'white'}
-      />
-    </svg>
-  )
-}
-
 const MobileNavigation = ({
   className,
   ...props
@@ -72,7 +53,11 @@ const MobileNavigation = ({
           >
             <div className={'flex flex-col gap-5 p-7'}>
               <div>
-                <WLogo />
+                <img
+                  src={'/icon-512x512.png'}
+                  alt={'logo'}
+                  className={'size-16'}
+                />
                 <ul className={'flex flex-col gap-2.5 pt-10'}>
                   <li
                     className={
