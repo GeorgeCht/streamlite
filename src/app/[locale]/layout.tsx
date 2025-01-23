@@ -6,6 +6,7 @@ import { Suspense } from 'react'
 
 import type { Metadata, Viewport } from 'next'
 
+import NextTopLoader from 'nextjs-toploader'
 import MainWrapper from '@/components/layout/main-wrapper'
 import MobileNavigation from '@/components/layout/mobile-navigation'
 import Navigation from '@/components/layout/navigation'
@@ -47,6 +48,7 @@ export default function LocaleLayout({
   return (
     <html lang={locale}>
       <body className={cn(inter.className, 'dark bg-black min-h-screen')}>
+        <NextTopLoader color={'#FFF'} showSpinner={false} />
         <Suspense fallback={<LoadingSpinner />}>
           <NextIntlClientProvider messages={messages}>
             <Providers>

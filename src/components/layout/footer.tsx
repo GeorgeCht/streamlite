@@ -20,13 +20,13 @@ const Footer = ({
     >
       <div>
         <p className={'text-sm sm:text-[15px] cursor-default'}>
-          ©{new Date().getFullYear()} WMovies. By GeorgeCht.
+          ©{new Date().getFullYear()} Streamlite. By GeorgeCht.
         </p>
       </div>
       <ul className={'flex sm:gap-6 gap-4'}>
         <li className={'text-sm sm:text-[15px]'}>
           <Link
-            href={'https://github.com/georgecht/wmovies/issues'}
+            href={'https://github.com/georgecht/streamlite/issues'}
             target={'_blank'}
           >
             {t('feedback')}
