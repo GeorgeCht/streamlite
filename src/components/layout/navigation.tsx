@@ -111,7 +111,7 @@ const Navigation = ({
   ...props
 }: DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>) => {
   const pathname = usePathname()
-  const idle = useIdle(4500)
+  const idle = useIdle(4000)
   const screenSize = useScreenSize()
   const tNavigation = useTranslations('navigation')
   const tActions = useTranslations('actions')
@@ -163,7 +163,9 @@ const Navigation = ({
         aria-label={'navigation'}
         className={cn(
           'fixed z-20 lg:min-h-screen lg:w-24 w-full lg:border-r lg:border-white/10 transition-transform !ease-in-out !duration-700',
-          idle && screenSize.width >= 768 ? '-translate-x-24' : 'translate-x-0',
+          idle && pathname.includes('/watch') && screenSize.width >= 768
+            ? '-translate-x-24'
+            : 'translate-x-0',
           className,
         )}
         {...props}

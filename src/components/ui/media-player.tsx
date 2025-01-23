@@ -34,7 +34,7 @@ const MediaPlayer = ({
 }) => {
   const [isLoaded, setIsLoaded] = useState(false)
   const router = useRouter()
-  const idle = useIdle(4500)
+  const idle = useIdle(4000)
   const screenSize = useScreenSize()
   const locale = useLocale()
 
@@ -59,9 +59,14 @@ const MediaPlayer = ({
     <React.Fragment>
       {!isLoaded && <LoadingSpinner />}
       <div
+        aria-hidden={isLoaded ? 'false' : 'true'}
+        aria-label={'media-wrapper'}
         className={cn(
-          'absolute w-screen h-screen top-0 left-0 z-0 bg-black opacity-0 transition-opacity !duration-1000',
+          'absolute h-screen w-screen top-0 left-0 z-0 bg-black opacity-0 transition-all !duration-1000',
           isLoaded ? 'opacity-100' : 'opacity-0',
+          idle
+            ? 'w-screen lg:-translate-x-24'
+            : 'lg:w-[calc(100vw-96px)] lg:translate-x-0',
           className,
         )}
         {...props}
@@ -81,6 +86,7 @@ const MediaPlayer = ({
       </div>
       {data && (
         <Motion.div
+          aria-label={'media-titlebar'}
           key={`media-namebar-${id}`}
           {...animateVariants({
             initial: {
@@ -108,7 +114,9 @@ const MediaPlayer = ({
             className={cn(
               'absolute flex items-start w-screen h-36 top-0 left-0 z-10 px-3 md:px-9 pt-7',
               'bg-gradient-to-b from-black from-25% via-black/60 via-60% to-transparent transition-all !duration-1000',
-              idle && screenSize.width >= 768 ? 'opacity-0' : 'opacity-100',
+              idle && screenSize.width >= 768
+                ? 'opacity-0 -translate-x-24'
+                : 'opacity-100 translate-x-0',
             )}
           >
             <div className={'flex items-center gap-4'}>
