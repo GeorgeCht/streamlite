@@ -20,9 +20,9 @@ import '../globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'WMovies | by GeorgeCht',
-  description: 'Watch your favorite movies online',
-  keywords: 'movies, watch, streaming, streaming movies',
+  title: 'Streamlite',
+  description: 'Stream your favorite movies online',
+  keywords: 'movies, watch, stream, streaming, streaming movies',
 }
 
 export const viewport: Viewport = {
