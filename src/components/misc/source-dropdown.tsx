@@ -12,12 +12,12 @@ import {
   Tooltip,
 } from '@nextui-org/react'
 
-import { Layers } from 'lucide-react'
+import { Check, GripVertical, Layers } from 'lucide-react'
 import { useSourceStore } from '@/stores/source'
 import { availablePlayers } from '@/lib/players'
 
 export const SourceServerDropdown = () => {
-  const { setSourceIndex } = useSourceStore()
+  const { setSourceIndex, sourceIndex } = useSourceStore()
 
   return (
     <li className={'mb-6'}>
@@ -57,6 +57,13 @@ export const SourceServerDropdown = () => {
                   onClick={() => {
                     setSourceIndex(index)
                   }}
+                  startContent={
+                    sourceIndex === index ? (
+                      <Check className={'size-4'} />
+                    ) : (
+                      <GripVertical className={'size-4'} />
+                    )
+                  }
                 >
                   Server {index + 1}: {player.title}
                 </DropdownItem>
