@@ -36,6 +36,7 @@ import {
 } from '@/lib/utils'
 
 import { Link, usePathname } from '@/components/i18n/navigation'
+import { SourceServerDropdown } from '@/components/misc/source-dropdown'
 import { useScreenSize } from '@/lib/hooks'
 import { Tooltip } from '@nextui-org/react'
 import { useIdle } from '@uidotdev/usehooks'
@@ -46,7 +47,7 @@ import type { Url } from 'next/dist/shared/lib/router/router'
 
 import LangSwitch from '@/components/i18n/lang-switch'
 import useTvSeriesTrackerStore from '@/stores/tv-series-tracker'
-import EpisodePicker from '../modal/episode-picker'
+import EpisodePicker from '@/components/modal/episode-picker'
 
 const NavigationItem = ({
   content,
@@ -453,6 +454,7 @@ const Navigation = ({
                 </Motion.div>
               )}
             </AnimatePresence>
+            <SourceServerDropdown />
             <NavigationItem
               href={'https://github.com/georgecht/streamlite'}
               target={'_blank'}

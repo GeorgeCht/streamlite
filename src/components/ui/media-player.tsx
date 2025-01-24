@@ -14,10 +14,11 @@ import { useIdle } from '@uidotdev/usehooks'
 import { motion as Motion } from 'framer-motion'
 import { ChevronLeft } from 'lucide-react'
 import { useLocale } from 'next-intl'
-import { useRouter } from '../i18n/navigation'
+import { useRouter } from '@/components/i18n/navigation'
 
-import LoadingSpinner from '../misc/spinner'
-import Title from './title'
+import LoadingSpinner from '@/components/misc/spinner'
+import Title from '@/components/ui/title'
+import { useSourceStore } from '@/stores/source'
 
 const MediaPlayer = ({
   mediaType,
@@ -37,6 +38,8 @@ const MediaPlayer = ({
   const idle = useIdle(4000)
   const screenSize = useScreenSize()
   const locale = useLocale()
+
+  const { getSource } = useSourceStore()
 
   const queryFn =
     mediaType === 'movie'
@@ -71,16 +74,12 @@ const MediaPlayer = ({
         )}
         {...props}
       >
-        {/* biome-ignore lint/a11y/useIframeTitle: <explanation> */}
         <iframe
+          title={data?.original_title ?? 'media-player'}
           className={'w-full h-screen'}
           onLoadedData={() => setIsLoaded(true)}
           onLoad={() => setIsLoaded(true)}
-          src={
-            mediaType === 'movie'
-              ? `https://vidsrc.to/embed/${mediaType}/${id}`
-              : `https://vidsrc.to/embed/${mediaType}/${id}/${season}/${episode}`
-          }
+          src={getSource(id, mediaType, season, episode).source}
           allowFullScreen
         />
       </div>

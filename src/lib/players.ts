@@ -1,7 +1,40 @@
-interface ServerPlayer {
+export interface ServerPlayer {
   title: string
   source: string
 }
+
+export const availablePlayers = [
+  {
+    title: 'VidLink',
+  },
+  {
+    title: '<Embed>',
+  },
+  {
+    title: 'SuperEmbed',
+  },
+  {
+    title: 'FilmKu',
+  },
+  {
+    title: 'NontonGo',
+  },
+  {
+    title: 'AutoEmbed',
+  },
+  {
+    title: '2Embed',
+  },
+  {
+    title: 'VidSrc 1',
+  },
+  {
+    title: 'VidSrc 2',
+  },
+  {
+    title: 'MoviesAPI',
+  },
+]
 
 export function getSourcePlayers<T extends MediaType>(
   id: string,

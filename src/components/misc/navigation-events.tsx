@@ -33,7 +33,6 @@ const NavigationEvents = () => {
 
   useEffect(() => {
     pushUrl(pathname)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [pathname])
 
   return null
