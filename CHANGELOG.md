@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [commit-and-tag-version](https://github.com/absolute-version/commit-and-tag-version) for commit guidelines.
 
+## [0.1.6](https://github.com/GeorgeCht/streamlite/compare/v0.1.5...v0.1.6) (2025-01-24)
+
+
+### ✨ Features
+
+* **source-dropdown:** updated dropdown server selection added icons for clarity and ux ([ba08a56](https://github.com/GeorgeCht/streamlite/commit/ba08a56a588fc7e72f79f937bfcf626e03cfe2f8))
+* **sources:** added multiple server sources for the media player ([5c75435](https://github.com/GeorgeCht/streamlite/commit/5c75435b5d6fb4a72867c0af75953a6009b77860))
+
 ## [0.1.5](https://github.com/GeorgeCht/streamlite/compare/v0.1.4...v0.1.5) (2025-01-23)
 
 
